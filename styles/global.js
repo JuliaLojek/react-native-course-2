@@ -18,7 +18,7 @@ export const globalStyles = StyleSheet.create({
   cardTitle: {
     fontFamily: "playfair-bold",
     fontSize: 20,
-    color: "#888",
+    color: "#666",
   },
   text: {
     fontFamily: "playfair-regular",
