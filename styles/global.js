@@ -7,12 +7,22 @@ export const globalStyles = StyleSheet.create({
   },
   titleText: {
     fontFamily: "playfair-bold",
-    fontSize: 30,
+    fontSize: 24,
     textAlign: "center",
     color: "#1e368d",
+    marginBottom: 20,
+  },
+  card: {
+    paddingVertical: 20,
+  },
+  cardTitle: {
+    fontFamily: "playfair-bold",
+    fontSize: 20,
+    color: "#888",
   },
   text: {
     fontFamily: "playfair-regular",
+    fontSize: 18,
     marginVertical: 8,
     lineHeight: 20,
   }
