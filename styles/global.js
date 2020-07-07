@@ -12,9 +12,6 @@ export const globalStyles = StyleSheet.create({
     color: "#1e368d",
     marginBottom: 20,
   },
-  card: {
-    paddingVertical: 20,
-  },
   cardTitle: {
     fontFamily: "playfair-bold",
     fontSize: 20,

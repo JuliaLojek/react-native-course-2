@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { globalStyles } from "../styles/global";
+import Card from "../components/Card";
 
 // components specified in the creation of navigation automatically get navigation object in props
 // with its built-in methods as e.g. navigate (push passed navigation component to the stack)
@@ -51,9 +52,10 @@ const Home = ({ navigation }) => {
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => itemPressHandler(item)}
-            style={globalStyles.card}
           >
-            <Text style={globalStyles.cardTitle}>{item.title}</Text>
+            <Card>
+              <Text style={globalStyles.cardTitle}>{item.title}</Text>
+            </Card>
           </TouchableOpacity>
         )}
       />

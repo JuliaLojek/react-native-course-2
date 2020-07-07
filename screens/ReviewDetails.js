@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import { globalStyles } from "../styles/global";
+import Card from "../components/Card";
 
 const ReviewDetails = ({ navigation }) => {
   // // pops the current screen off the stack
@@ -10,9 +11,15 @@ const ReviewDetails = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
-      <Text style={globalStyles.titleText}>{ navigation.getParam("title") }</Text>
-      <Text style={globalStyles.text}>{ navigation.getParam("body") }</Text>
-      <Text style={globalStyles.text}>Rating: { navigation.getParam("rating") }</Text>
+      <Card>
+        <Text style={globalStyles.titleText}>
+          {navigation.getParam("title")}
+        </Text>
+        <Text style={globalStyles.text}>{navigation.getParam("body")}</Text>
+        <Text style={globalStyles.text}>
+          Rating: {navigation.getParam("rating")}
+        </Text>
+      </Card>
     </View>
   );
 };
