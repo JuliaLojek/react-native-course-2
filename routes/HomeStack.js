@@ -31,4 +31,9 @@ const defaultNavStyle = {
 
 const HomeStack = createStackNavigator(screens, defaultNavStyle);
 
-export default createAppContainer(HomeStack);
+// since it's not the main navigation anymore, now the drawe navigation will be wrapped in
+// createAppContainer to be displayed by default:
+// export default createAppContainer(HomeStack);
+
+// now we export HomeStack and AboutStack in the other file:
+export default HomeStack;
