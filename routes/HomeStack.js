@@ -1,14 +1,21 @@
+import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
-import { createAppContainer } from "react-navigation";
 import Home from "../screens/Home";
 import ReviewDetails from "../screens/ReviewDetails";
+import NavHeader from "./NavHeader";
 
 const screens = {
   Home: {
     // whatever is here at the top will be shown by default
     screen: Home,
-    navigationOptions: {
-      title: "Game Reviewer",
+    navigationOptions: ({ navigation }) => {
+      // instead of an object, we pass a function which returns an object (to pass a navigation object to the header component)
+      return {
+        // title only accepts a string, header accepts a function which returns a component
+        header: () => (
+          <NavHeader navigation={navigation} title="Game Reviewer" />
+        ),
+      };
     },
   },
   ReviewDetails: {
