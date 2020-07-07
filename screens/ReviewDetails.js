@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
-import { globalStyles } from "../styles/global";
+import { StyleSheet, View, Text, Image } from "react-native";
+import { globalStyles, images } from "../styles/global";
 import Card from "../components/Card";
 
 const ReviewDetails = ({ navigation }) => {
@@ -8,6 +8,7 @@ const ReviewDetails = ({ navigation }) => {
   // const pressHandler = () => {
   //   navigation.goBack();
   // };
+  const rating = navigation.getParam("rating");
 
   return (
     <View style={globalStyles.container}>
@@ -16,14 +17,24 @@ const ReviewDetails = ({ navigation }) => {
           {navigation.getParam("title")}
         </Text>
         <Text style={globalStyles.text}>{navigation.getParam("body")}</Text>
-        <Text style={globalStyles.text}>
-          Rating: {navigation.getParam("rating")}
-        </Text>
+        <View style={styles.ratingBox}>
+          <Text style={globalStyles.text}>Rating: </Text>
+          <Image source={images.ratings[rating]} />
+        </View>
       </Card>
     </View>
   );
 };
 
-// const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  ratingBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderTopWidth: 1,
+    borderTopColor: "#ddd",
+    marginTop: 20,
+    paddingTop: 10,
+  },
+});
 
 export default ReviewDetails;
