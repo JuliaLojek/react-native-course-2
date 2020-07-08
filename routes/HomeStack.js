@@ -29,9 +29,8 @@ const screens = {
 const defaultNavStyle = {
   defaultNavigationOptions: {
     headerStyle: {
-      backgroundColor: "#1e368d",
+      backgroundColor: "#ddd",
     },
-    headerTintColor: "#fff",
     headerTitleAlign: "center",
   },
 };
