@@ -5,9 +5,11 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
+  Modal,
 } from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from "../components/Card";
+import { MaterialIcons } from "@expo/vector-icons";
 
 // components specified in the creation of navigation automatically get navigation object in props
 // with its built-in methods as e.g. navigate (push passed navigation component to the stack)
@@ -17,6 +19,8 @@ const Home = ({ navigation }) => {
   //   // basically does the same:
   //   // navigation.push("ReviewDetails");
   // };
+
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const [reviews, setReviews] = useState([
     {
@@ -46,13 +50,20 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
+      
+
+      <MaterialIcons
+        name="add"
+        size={30}
+        onPress={() => setModalOpen(true)}
+        style={styles.addButton}
+      />
+
       <Text style={globalStyles.titleText}>My Game Reviews:</Text>
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
-          <TouchableOpacity
-            onPress={() => itemPressHandler(item)}
-          >
+          <TouchableOpacity onPress={() => itemPressHandler(item)}>
             <Card>
               <Text style={globalStyles.cardTitle}>{item.title}</Text>
             </Card>
@@ -63,6 +74,23 @@ const Home = ({ navigation }) => {
   );
 };
 
-// const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  addButton: {
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    backgroundColor: "#fff",
+    padding: 10,
+    borderRadius: 6,
+    alignSelf: "center",
+    elevation: 3,
+    shadowOffset: { width: 2, height: 2 },
+    shadowColor: "#333",
+    shadowOpacity: 0.5,
+  },
+  closeButton: {
+    alignSelf: "flex-end",
+  },
+});
 
 export default Home;

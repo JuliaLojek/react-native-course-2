@@ -9,7 +9,6 @@ export const globalStyles = StyleSheet.create({
     fontFamily: "playfair-bold",
     fontSize: 24,
     textAlign: "center",
-    color: "#1e368d",
     marginBottom: 20,
   },
   cardTitle: {
