@@ -22,6 +22,19 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 8,
     lineHeight: 20,
   },
+  button: {
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    backgroundColor: "#fff",
+    padding: 10,
+    borderRadius: 6,
+    alignSelf: "center",
+    elevation: 3,
+    shadowOffset: { width: 2, height: 2 },
+    shadowColor: "#333",
+    shadowOpacity: 0.5,
+  },
 });
 
 export const images = {

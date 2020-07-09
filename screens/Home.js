@@ -10,6 +10,7 @@ import {
 import { globalStyles } from "../styles/global";
 import Card from "../components/Card";
 import { MaterialIcons } from "@expo/vector-icons";
+import FormModal from "../components/FormModal";
 
 // components specified in the creation of navigation automatically get navigation object in props
 // with its built-in methods as e.g. navigate (push passed navigation component to the stack)
@@ -48,15 +49,19 @@ const Home = ({ navigation }) => {
     navigation.navigate("ReviewDetails", review);
   };
 
+  const onModalClose = () => {
+    setModalOpen(false);
+  };
+
   return (
     <View style={globalStyles.container}>
-      
+      <FormModal isModalOpen={isModalOpen} onModalClose={onModalClose} />
 
       <MaterialIcons
         name="add"
         size={30}
         onPress={() => setModalOpen(true)}
-        style={styles.addButton}
+        style={globalStyles.button}
       />
 
       <Text style={globalStyles.titleText}>My Game Reviews:</Text>
@@ -74,23 +79,6 @@ const Home = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  addButton: {
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    backgroundColor: "#fff",
-    padding: 10,
-    borderRadius: 6,
-    alignSelf: "center",
-    elevation: 3,
-    shadowOffset: { width: 2, height: 2 },
-    shadowColor: "#333",
-    shadowOpacity: 0.5,
-  },
-  closeButton: {
-    alignSelf: "flex-end",
-  },
-});
+// const styles = StyleSheet.create({});
 
 export default Home;
