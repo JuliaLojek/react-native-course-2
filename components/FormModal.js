@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, View, Text, StyleSheet } from "react-native";
 import { globalStyles } from "../styles/global";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import AddReviewForm from "./AddReviewForm";
 
 const FormModal = ({ isModalOpen, onModalClose }) => {
   return (
@@ -15,7 +15,7 @@ const FormModal = ({ isModalOpen, onModalClose }) => {
           style={{ ...globalStyles.button, ...styles.closeButton }}
         />
 
-        <Text>Hello from the modal</Text>
+        <AddReviewForm />
       </View>
     </Modal>
   );
@@ -24,6 +24,9 @@ const FormModal = ({ isModalOpen, onModalClose }) => {
 const styles = StyleSheet.create({
   closeButton: {
     alignSelf: "flex-end",
+  },
+  modalContent: {
+    flex: 1,
   },
 });
 

@@ -22,7 +22,6 @@ const Home = ({ navigation }) => {
   // };
 
   const [isModalOpen, setModalOpen] = useState(false);
-
   const [reviews, setReviews] = useState([
     {
       title: "Cactus Fight",

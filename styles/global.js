@@ -35,6 +35,14 @@ export const globalStyles = StyleSheet.create({
     shadowColor: "#333",
     shadowOpacity: 0.5,
   },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 6,
+    marginBottom: 16,
+  },
 });
 
 export const images = {
