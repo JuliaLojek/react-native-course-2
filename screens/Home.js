@@ -48,7 +48,7 @@ const Home = ({ navigation }) => {
     setReviews((prevReviews) => {
       return [review, ...prevReviews];
     });
-    setModalOpen(false);
+    // setModalOpen(false);
   };
 
   const itemPressHandler = (review) => {

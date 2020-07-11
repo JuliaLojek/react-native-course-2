@@ -4,15 +4,19 @@ import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 
 const AddReviewForm = ({ addReview }) => {
-  const submitHandler = (values) => {
+  const submitHandler = (values, actions) => {
     addReview(values);
+    // actions are used to clear the inputs (reset the form)
+    // we close the modal so we don't need that because it happens automatically
+    // but in other cases when we leave the view with the form open:
+    actions.resetForm();
   };
 
   return (
     <View style={globalStyles.container}>
       <Formik
         initialValues={{ title: "", body: "", rating: "" }}
-        onSubmit={(values) => submitHandler(values)}
+        onSubmit={(values, actions) => submitHandler(values, actions)}
       >
         {(formikProps) => (
           <View>
