@@ -3,8 +3,9 @@ import { Modal, View, Text, StyleSheet } from "react-native";
 import { globalStyles } from "../styles/global";
 import { MaterialIcons } from "@expo/vector-icons";
 import AddReviewForm from "./AddReviewForm";
+import { add } from "react-native-reanimated";
 
-const FormModal = ({ isModalOpen, onModalClose }) => {
+const FormModal = ({ isModalOpen, onModalClose, addReview }) => {
   return (
     <Modal visible={isModalOpen} animationType="slide">
       <View style={styles.modalContent}>
@@ -15,7 +16,7 @@ const FormModal = ({ isModalOpen, onModalClose }) => {
           style={{ ...globalStyles.button, ...styles.closeButton }}
         />
 
-        <AddReviewForm />
+        <AddReviewForm addReview={addReview} />
       </View>
     </Modal>
   );
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
   },
   modalContent: {
     flex: 1,
+    padding: 16,
   },
 });
 

@@ -43,6 +43,14 @@ const Home = ({ navigation }) => {
     },
   ]);
 
+  const addReview = (review) => {
+    review.key = Math.random().toString();
+    setReviews((prevReviews) => {
+      return [review, ...prevReviews];
+    });
+    setModalOpen(false);
+  };
+
   const itemPressHandler = (review) => {
     // after the screen name we can pass an object which will be available in the navigation object in the props by using special methods
     navigation.navigate("ReviewDetails", review);
@@ -54,7 +62,7 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
-      <FormModal isModalOpen={isModalOpen} onModalClose={onModalClose} />
+      <FormModal isModalOpen={isModalOpen} onModalClose={onModalClose} addReview={addReview} />
 
       <MaterialIcons
         name="add"

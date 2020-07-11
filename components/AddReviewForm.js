@@ -3,9 +3,9 @@ import { StyleSheet, Button, TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 
-const AddReviewForm = () => {
+const AddReviewForm = ({ addReview }) => {
   const submitHandler = (values) => {
-    console.log(values);
+    addReview(values);
   };
 
   return (
