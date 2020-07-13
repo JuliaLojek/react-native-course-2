@@ -3,6 +3,7 @@ import { StyleSheet, Button, TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 import * as yup from "yup";
+import CustButton from "./CustButton";
 
 const reviewSchema = yup.object({
   title: yup.string().required().min(4),
@@ -65,11 +66,12 @@ const AddReviewForm = ({ addReview }) => {
               {formikProps.touched.rating && formikProps.errors.rating}
             </Text>
 
-            <Button
+            {/* <Button
               title="Submit"
               color="maroon"
               onPress={formikProps.handleSubmit}
-            />
+            /> */}
+            <CustButton text="submit" onPress={formikProps.handleSubmit} />
           </View>
         )}
       </Formik>
