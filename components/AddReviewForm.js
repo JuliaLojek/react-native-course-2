@@ -50,6 +50,7 @@ const AddReviewForm = ({ addReview }) => {
               onChangeText={formikProps.handleChange("body")}
               value={formikProps.values.body}
               onBlur={formikProps.handleBlur("body")}
+              multiline minHeight={100}
             />
             <Text style={globalStyles.errorText}>
               {formikProps.touched.body && formikProps.errors.body}
