@@ -41,7 +41,13 @@ export const globalStyles = StyleSheet.create({
     padding: 10,
     fontSize: 18,
     borderRadius: 6,
-    marginBottom: 16,
+    marginBottom: 10,
+  },
+  errorText: {
+    color: "maroon",
+    fontWeight: "bold",
+    marginBottom: 10,
+    textAlign: "center",
   },
 });
 
